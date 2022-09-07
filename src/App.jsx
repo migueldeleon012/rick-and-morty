@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar/Navbar.jsx';
 import Searchbar from './components/Searchbar/Searchbar.jsx';
+import List from './components/List/List.jsx';
 import './App.css';
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     <div className="App">
       <Navbar />
       <Searchbar />
+      <List />
     </div>
   );
 };
