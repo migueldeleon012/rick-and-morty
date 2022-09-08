@@ -5,5 +5,7 @@
 }
 
 :root {
-  --blue: blue;
+  --blue: rgb(81, 141, 253);
+  --black: rgba(0, 0, 0, 0.7);
+  --gray: rgb(207, 207, 207);
 }

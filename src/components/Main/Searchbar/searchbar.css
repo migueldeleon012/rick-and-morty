@@ -1,14 +1,14 @@
 .searcbar {
   width: 100%;
-  margin: 10px 0;
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
 }
 
-.searchbar__container {
-  height: 40px;
+.searcbar input {
   width: 240px;
-  background-color: blue;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
+  height: 40px;
+  border: 1px solid var(--gray);
+  border-radius: 20px;
+  padding: 0 10px;
 }

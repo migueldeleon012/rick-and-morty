@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from '../Modals/Modal';
+import './card.css';
 
 const Card = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,11 +22,9 @@ const Card = (props) => {
 
   return (
     <>
-      <figure onClick={openModalHandler}>
-        <img src={props.image} alt={`${props.name}`} />
-        <figcaption>
-          <p>{props.name}</p>
-        </figcaption>
+      <figure onClick={openModalHandler} className="card">
+        <img src={props.image} alt={props.name} />
+        <figcaption className="card__desc">{props.name}</figcaption>
       </figure>
       {isModalOpen && (
         <Modal {...props} openModal={openModal} isModalOpen={isModalOpen} />

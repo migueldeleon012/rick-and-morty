@@ -1,16 +1,16 @@
 import './searchbar.css';
 
 const Searchbar = ({ searchInput, setSearchInput }) => {
+  const setInputHandler = (e) => setSearchInput(e.target.value);
+
   return (
     <section className="searcbar">
-      <div className="searchbar__container">
-        <input
-          type="text"
-          placeholder="Search character..."
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-        />
-      </div>
+      <input
+        type="text"
+        placeholder="Search character..."
+        value={searchInput}
+        onChange={setInputHandler}
+      />
     </section>
   );
 };
