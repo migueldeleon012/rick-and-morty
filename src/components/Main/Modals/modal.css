@@ -1,0 +1,29 @@
+.modal {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  background-color: var(--black);
+}
+
+.modal__main {
+  padding: 50px;
+  width: 40%;
+  background-color: white;
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.modal__main--btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
