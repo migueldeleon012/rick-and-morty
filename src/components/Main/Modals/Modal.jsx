@@ -1,17 +1,35 @@
 import './modal.css';
 
-const Modal = (props) => {
+const Modal = ({
+  openModal,
+  image,
+  name,
+  species,
+  gender,
+  origin,
+  location,
+}) => {
   return (
-    <div className="modal" onClick={() => props.openModal(false)}>
+    <div className="modal">
       <main className="modal__main">
-        <button className="modal__main--btn">X</button>
-        <img src={props.image} alt={`${props.name}`} />
+        <button className="modal__main--btn" onClick={() => openModal(false)}>
+          X
+        </button>
+        <img src={image} alt={`${name}`} />
         <div className="modal__main--text">
-          <h2>{props.name}</h2>
-          <p>Species: {props.species}</p>
-          <p>Gender: {props.gender}</p>
-          <p>Origin: {props.origin}</p>
-          <p>Location: {props.location}</p>
+          <h2>{name}</h2>
+          <p>
+            <strong>Species:</strong> {species}
+          </p>
+          <p>
+            <strong>Gender:</strong> {gender}
+          </p>
+          <p>
+            <strong>Origin:</strong> {origin}
+          </p>
+          <p>
+            <strong>Location:</strong> {location}
+          </p>
         </div>
       </main>
     </div>
