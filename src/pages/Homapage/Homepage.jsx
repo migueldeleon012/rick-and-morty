@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Card from './Cards/Card';
-import Searchbar from './Searchbar/Searchbar';
-import Pagination from './Pagination/Pagination';
-import './main.css';
+import Card from '../../components/Cards/Card';
+import Searchbar from '../../components/Searchbar/Searchbar';
+import Pagination from '../../components/Pagination/Pagination';
+import './homepage.css';
 
 const List = () => {
   const [currentDataResults, setCurrentDataResults] = useState([]);
   const [currentDataInfo, setCurrentDataInfo] = useState([]);
   const [searchInput, setSearchInput] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [maxPageLimit, setMaxPageLimit] = useState(5);
+  const [minPageLimit, setMinPageLimit] = useState(0);
 
   let apiURL = `https://rickandmortyapi.com/api/character/?page=${currentPage}&name=${searchInput}`;
 
@@ -22,7 +24,13 @@ const List = () => {
 
   return (
     <section className="main">
-      <Searchbar setSearchInput={setSearchInput} searchInput={searchInput} />
+      <Searchbar
+        setSearchInput={setSearchInput}
+        searchInput={searchInput}
+        setCurrentPage={setCurrentPage}
+        setMaxPageLimit={setMaxPageLimit}
+        setMinPageLimit={setMinPageLimit}
+      />
       <main className="main__list">
         {currentDataResults.map((item) => (
           <Card
@@ -40,6 +48,10 @@ const List = () => {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         currentDataInfo={currentDataInfo}
+        maxPageLimit={maxPageLimit}
+        setMaxPageLimit={setMaxPageLimit}
+        minPageLimit={minPageLimit}
+        setMinPageLimit={setMinPageLimit}
       />
     </section>
   );

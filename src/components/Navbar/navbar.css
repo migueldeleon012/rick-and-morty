@@ -1,9 +1,31 @@
-nav {
+.nav {
   background-color: var(--blue);
   padding: 20px;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav h1 {
+.nav h1 {
   font-size: 2.2rem;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  margin-right: 100px;
+}
+
+.nav__links a {
+  text-decoration: none;
+  color: white;
+  transition: 300ms;
+  font-size: 1.2rem;
+}
+
+.nav__links a:hover {
+  text-decoration: none;
+  color: var(--black);
 }
