@@ -28,8 +28,6 @@ const Pagination = ({
   };
 
   const handleNextButton = () => {
-    console.log(currentPage);
-
     if (currentPage + 1 > maxPageLimit) {
       setMaxPageLimit(maxPageLimit + numberPagesDisplayed);
       setMinPageLimit(minPageLimit + numberPagesDisplayed);
