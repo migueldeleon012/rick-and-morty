@@ -12,17 +12,17 @@
 
 .modal__main {
   padding: 50px;
-  width: 40%;
+  width: 90%;
+  height: 90vh;
   background-color: white;
-  display: flex;
   gap: 20px;
   z-index: 10;
   position: relative;
 }
 
-.modal__main--text h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.modal__main img {
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .modal__main--close {
@@ -62,4 +62,34 @@
 .modal__main--btn.remove:hover {
   color: var(--red);
   background-color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .modal__main {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    height: auto;
+  }
+
+  .modal__main img {
+    width: auto;
+  }
+
+  .modal__main--text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .modal__main {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .modal__main {
+    width: 50%;
+  }
 }
