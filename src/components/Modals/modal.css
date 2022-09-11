@@ -34,3 +34,32 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+.modal__main--btn {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: 2px solid;
+  border-radius: 2px;
+  color: var(--white);
+  transition: 300ms;
+}
+
+.modal__main--btn.add {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+
+.modal__main--btn.add:hover {
+  color: var(--blue);
+  background-color: transparent;
+}
+
+.modal__main--btn.remove {
+  background-color: var(--red);
+  border-color: var(--red);
+}
+
+.modal__main--btn.remove:hover {
+  color: var(--red);
+  background-color: transparent;
+}

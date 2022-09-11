@@ -65,11 +65,16 @@ const Modal = ({
             <strong>Location:</strong> {location}
           </p>
           {fromFavorite ? (
-            <button onClick={() => removeFromFavorite(id)}>
+            <button
+              className="modal__main--btn remove"
+              onClick={() => removeFromFavorite(id)}
+            >
               Remove from favorite
             </button>
           ) : (
-            <button onClick={addToFavorite}>Add to favorite</button>
+            <button className="modal__main--btn add" onClick={addToFavorite}>
+              Add to favorite
+            </button>
           )}
         </div>
       </main>
