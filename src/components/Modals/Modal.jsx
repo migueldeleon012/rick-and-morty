@@ -46,10 +46,7 @@ const Modal = ({
   return (
     <div className="modal">
       <main className="modal__main">
-        <button
-          className="modal__main--close-button"
-          onClick={() => openModal(false)}
-        >
+        <button className="modal__main--close" onClick={() => openModal(false)}>
           X
         </button>
         <img src={image} alt={`${name}`} />
