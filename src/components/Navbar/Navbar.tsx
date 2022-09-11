@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './navbar.css';
 
 const Navbar = () => {
-  const [navbarActive, setNavbarActive] = useState(false);
+  const [navbarActive, setNavbarActive] = useState<Boolean>(false);
 
-  const setNavbar = () => setNavbarActive((prev) => !prev);
+  const setNavbar = () => setNavbarActive((prev: Boolean) => !prev);
 
   return (
     <nav className={navbarActive ? 'nav active' : 'nav'}>

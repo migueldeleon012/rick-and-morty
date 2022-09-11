@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Modal from '../Modals/Modal';
+import { ICard } from './interfaces';
 import './card.css';
 
-const Card = (props) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [scrollingDisabled, setScrollingDisabled] = useState(false);
+const Card = (props: ICard) => {
+  const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
+  const [scrollingDisabled, setScrollingDisabled] = useState<Boolean>(false);
 
   const openModal = (open) => {
     setIsModalOpen(open);

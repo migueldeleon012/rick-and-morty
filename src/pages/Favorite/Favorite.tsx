@@ -3,10 +3,12 @@ import Card from '../../components/Cards/Card';
 import './favorite.css';
 
 const Favorite = () => {
-  const [favorites, setFavorite] = useState([]);
+  const [favorites, setFavorite] = useState<any[]>([]);
 
   useEffect(() => {
-    const favoriteLocalStorage = JSON.parse(localStorage.getItem('favorite'));
+    const favoriteLocalStorage = typeof localStorage.getItem('favorite')
+      ? JSON.parse(localStorage.getItem('favorite'))
+      : null;
     favoriteLocalStorage
       ? setFavorite(JSON.parse(localStorage.getItem('favorite')))
       : setFavorite([]);

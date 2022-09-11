@@ -1,17 +1,18 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../../components/Cards/Card';
 import Searchbar from '../../components/Searchbar/Searchbar';
 import Pagination from '../../components/Pagination/Pagination';
+import { ICurrentDataInfo } from './interfaces';
 import './homepage.css';
 
 const List = () => {
-  const [currentDataResults, setCurrentDataResults] = useState([]);
-  const [currentDataInfo, setCurrentDataInfo] = useState([]);
-  const [searchInput, setSearchInput] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [maxPageLimit, setMaxPageLimit] = useState(5);
-  const [minPageLimit, setMinPageLimit] = useState(0);
+  const [currentDataResults, setCurrentDataResults] = useState<any[]>([]);
+  const [currentDataInfo, setCurrentDataInfo] = useState<ICurrentDataInfo>({});
+  const [searchInput, setSearchInput] = useState<string>('');
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [maxPageLimit, setMaxPageLimit] = useState<number>(5);
+  const [minPageLimit, setMinPageLimit] = useState<number>(0);
 
   let apiURL = `https://rickandmortyapi.com/api/character/?page=${currentPage}&name=${searchInput}`;
 
@@ -21,6 +22,8 @@ const List = () => {
       setCurrentDataInfo(res.data.info);
     });
   }, [apiURL]);
+
+  console.log(currentDataInfo);
 
   return (
     <section className="main">

@@ -1,4 +1,6 @@
+import React from 'react';
 import axios from 'axios';
+import { IModal } from './interfaces';
 import './modal.css';
 
 const Modal = ({
@@ -12,7 +14,7 @@ const Modal = ({
   location,
   fromFavorite,
   setFavorite,
-}) => {
+}: IModal) => {
   const addToFavorite = () => {
     const apiURL = `https://rickandmortyapi.com/api/character/${id}`;
     axios.get(apiURL).then((res) => {
@@ -40,7 +42,7 @@ const Modal = ({
       (item) => item.id !== id
     );
     localStorage.setItem('favorite', JSON.stringify(newData));
-    setFavorite(JSON.parse(localStorage.getItem('favorite')));
+    setFavorite?.(JSON.parse(localStorage.getItem('favorite')));
   };
 
   return (

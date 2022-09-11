@@ -1,3 +1,5 @@
+import React from 'react';
+import { ISearchbar } from './interfaces';
 import './searchbar.css';
 
 const Searchbar = ({
@@ -6,7 +8,7 @@ const Searchbar = ({
   setCurrentPage,
   setMaxPageLimit,
   setMinPageLimit,
-}) => {
+}: ISearchbar) => {
   const setInputHandler = (e) => {
     setCurrentPage(1);
     setSearchInput(e.target.value);

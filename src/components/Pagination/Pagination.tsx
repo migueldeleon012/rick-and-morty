@@ -1,4 +1,6 @@
+import React from 'react';
 import './pagination.css';
+import { IPagination } from './interfaces';
 
 const Pagination = ({
   currentPage,
@@ -8,13 +10,15 @@ const Pagination = ({
   setMaxPageLimit,
   minPageLimit,
   setMinPageLimit,
-}) => {
-  const pageNumberArray = [];
+}: IPagination) => {
+  const pageNumberArray: number[] = [];
   const numberPages = currentDataInfo.pages;
-  const numberPagesDisplayed = 5;
+  const numberPagesDisplayed: number = 5;
 
-  for (let i = 1; i <= numberPages; i++) {
-    pageNumberArray.push(i);
+  if (numberPages) {
+    for (let i = 1; i <= numberPages; i++) {
+      pageNumberArray?.push?.(i);
+    }
   }
 
   const changePages = (e) => setCurrentPage(Number(e.target.textContent));
@@ -29,10 +33,11 @@ const Pagination = ({
 
   const handleNextButton = () => {
     if (currentPage + 1 > maxPageLimit) {
-      setMaxPageLimit(maxPageLimit + numberPagesDisplayed);
+      let result = maxPageLimit + numberPagesDisplayed;
+      setMaxPageLimit(result);
       setMinPageLimit(minPageLimit + numberPagesDisplayed);
     }
-    setCurrentPage((prev) => prev + 1);
+    setCurrentPage?.((prev) => prev + 1);
   };
 
   const renderPageNumber = (pageNumber) => {
