@@ -43,6 +43,7 @@ const List = () => {
             origin={item.origin.name}
             location={item.location.name}
             image={item.image}
+            episode={item.episode}
           />
         ))}
       </main>

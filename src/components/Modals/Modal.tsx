@@ -14,6 +14,7 @@ const Modal = ({
   location,
   fromFavorite,
   setFavorite,
+  episode,
 }: IModal) => {
   const addToFavorite = () => {
     const apiURL = `https://rickandmortyapi.com/api/character/${id}`;
@@ -51,34 +52,48 @@ const Modal = ({
         <button className="modal__main--close" onClick={() => openModal(false)}>
           X
         </button>
-        <img src={image} alt={`${name}`} />
-        <div className="modal__main--text">
-          <h2>{name}</h2>
-          <p>
-            <strong>Species:</strong> {species}
-          </p>
-          <p>
-            <strong>Gender:</strong> {gender}
-          </p>
-          <p>
-            <strong>Origin:</strong> {origin}
-          </p>
-          <p>
-            <strong>Location:</strong> {location}
-          </p>
-          {fromFavorite ? (
-            <button
-              className="modal__main--btn remove"
-              onClick={() => removeFromFavorite(id)}
-            >
-              Remove from favorite
-            </button>
-          ) : (
-            <button className="modal__main--btn add" onClick={addToFavorite}>
-              Add to favorite
-            </button>
-          )}
-        </div>
+        <section className="modal__main--info">
+          <img src={image} alt={`${name}`} />
+          <div className="modal__main--text">
+            <h2>{name}</h2>
+            <p>
+              <strong>Species:</strong> {species}
+            </p>
+            <p>
+              <strong>Gender:</strong> {gender}
+            </p>
+            <p>
+              <strong>Origin:</strong> {origin}
+            </p>
+            <p>
+              <strong>Location:</strong> {location}
+            </p>
+            {fromFavorite ? (
+              <button
+                className="modal__main--btn remove"
+                onClick={() => removeFromFavorite(id)}
+              >
+                Remove from favorite
+              </button>
+            ) : (
+              <button className="modal__main--btn add" onClick={addToFavorite}>
+                Add to favorite
+              </button>
+            )}
+          </div>
+        </section>
+        <hr />
+        <h2>Episodes appeared</h2>
+        <section className="modal__main--episodes">
+          {episode?.map((item) => {
+            const splittedURL: string[] = item.split('/');
+            return (
+              <p>{`${splittedURL[splittedURL.length - 2]} ${
+                splittedURL[splittedURL.length - 1]
+              }`}</p>
+            );
+          })}
+        </section>
       </main>
     </div>
   );

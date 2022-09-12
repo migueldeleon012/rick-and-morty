@@ -18,11 +18,16 @@
   gap: 20px;
   z-index: 10;
   position: relative;
+  overflow-y: scroll;
 }
 
 .modal__main img {
   width: 100%;
   margin-bottom: 30px;
+}
+
+.modal__main h2 {
+  margin-bottom: 20px;
 }
 
 .modal__main--close {
@@ -64,21 +69,33 @@
   background-color: transparent;
 }
 
+.modal hr {
+  margin: 20px 0;
+}
+
+.modal__main--episodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 @media screen and (min-width: 768px) {
   .modal__main {
-    display: flex;
-    gap: 20px;
     width: 80%;
-    height: auto;
+    aspect-ratio: 3/2;
   }
 
   .modal__main img {
     width: auto;
   }
 
-  .modal__main--text h2 {
-    font-size: 2rem;
+  .modal__main h2 {
     margin-bottom: 20px;
+  }
+
+  .modal__main--info {
+    display: flex;
+    gap: 20px;
   }
 }
 

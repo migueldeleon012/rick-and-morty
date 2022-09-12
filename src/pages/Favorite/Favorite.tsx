@@ -32,6 +32,7 @@ const Favorite = () => {
             fromFavorite={true}
             favorite={favorites}
             setFavorite={setFavorite}
+            episode={item.episode}
           />
         ))
       )}
