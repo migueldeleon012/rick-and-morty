@@ -9,7 +9,7 @@ const Searchbar = ({
   setMaxPageLimit,
   setMinPageLimit,
 }: ISearchbar) => {
-  const setInputHandler = (e) => {
+  const setInputHandler = (e: any) => {
     setCurrentPage(1);
     setSearchInput(e.target.value);
     setMaxPageLimit(5);

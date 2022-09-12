@@ -6,13 +6,15 @@ const Favorite = () => {
   const [favorites, setFavorite] = useState<any[]>([]);
 
   useEffect(() => {
-    const favoriteLocalStorage = typeof localStorage.getItem('favorite')
-      ? JSON.parse(localStorage.getItem('favorite'))
-      : null;
+    const favoriteLocalStorage = JSON.parse(
+      localStorage.getItem('favorite') || '{}'
+    );
     favoriteLocalStorage
-      ? setFavorite(JSON.parse(localStorage.getItem('favorite')))
+      ? setFavorite(JSON.parse(localStorage.getItem('favorite') || '[]'))
       : setFavorite([]);
   }, []);
+
+  console.log(favorites);
 
   return (
     <main className="favorite">

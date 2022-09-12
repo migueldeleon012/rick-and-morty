@@ -4,10 +4,10 @@ import { ICard } from './interfaces';
 import './card.css';
 
 const Card = (props: ICard) => {
-  const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
-  const [scrollingDisabled, setScrollingDisabled] = useState<Boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [scrollingDisabled, setScrollingDisabled] = useState<boolean>(false);
 
-  const openModal = (open) => {
+  const openModal = (open: boolean) => {
     setIsModalOpen(open);
     setScrollingDisabled(open);
   };

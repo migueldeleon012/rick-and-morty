@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import './navbar.css';
 
 const Navbar = () => {
-  const [navbarActive, setNavbarActive] = useState<Boolean>(false);
+  const [navbarActive, setNavbarActive] = useState<boolean>(false);
 
-  const setNavbar = () => setNavbarActive((prev: Boolean) => !prev);
+  const setNavbar = () => setNavbarActive((prev: boolean) => !prev);
 
   return (
     <nav className={navbarActive ? 'nav active' : 'nav'}>

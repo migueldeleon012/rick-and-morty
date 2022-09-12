@@ -21,14 +21,14 @@ const Pagination = ({
     }
   }
 
-  const changePages = (e) => setCurrentPage(Number(e.target.textContent));
+  const changePages = (e: any) => setCurrentPage(Number(e.target.textContent));
 
   const handlePrevButton = () => {
     if ((currentPage - 1) % maxPageLimit === 0) {
       setMaxPageLimit(maxPageLimit - numberPagesDisplayed);
       setMinPageLimit(minPageLimit - numberPagesDisplayed);
     }
-    setCurrentPage((prev) => prev - 1);
+    setCurrentPage((prev: number) => prev - 1);
   };
 
   const handleNextButton = () => {
@@ -37,10 +37,10 @@ const Pagination = ({
       setMaxPageLimit(result);
       setMinPageLimit(minPageLimit + numberPagesDisplayed);
     }
-    setCurrentPage?.((prev) => prev + 1);
+    setCurrentPage?.((prev: number) => prev + 1);
   };
 
-  const renderPageNumber = (pageNumber) => {
+  const renderPageNumber = (pageNumber: number) => {
     if (pageNumber <= maxPageLimit && pageNumber > minPageLimit) {
       return (
         <button

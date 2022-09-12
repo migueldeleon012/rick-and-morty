@@ -23,8 +23,6 @@ const List = () => {
     });
   }, [apiURL]);
 
-  console.log(currentDataInfo);
-
   return (
     <section className="main">
       <Searchbar
