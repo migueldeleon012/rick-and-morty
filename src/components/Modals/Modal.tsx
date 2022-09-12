@@ -90,11 +90,10 @@ const Modal = ({
         <section className="modal__main--episodes">
           {episode?.map((item) => {
             const splittedURL: string[] = item.split('/');
-            return (
-              <p>{`${splittedURL[splittedURL.length - 2]} ${
-                splittedURL[splittedURL.length - 1]
-              }`}</p>
-            );
+            const episode = `${splittedURL[splittedURL.length - 2]} ${
+              splittedURL[splittedURL.length - 1]
+            }`;
+            return <p key={episode}>{episode}</p>;
           })}
         </section>
       </main>
