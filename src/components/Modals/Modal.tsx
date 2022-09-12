@@ -21,7 +21,6 @@ const Modal = ({
       let data = res.data;
       if (!localStorage.getItem('favorite')) {
         localStorage.setItem('favorite', JSON.stringify([data]));
-        console.log('hey');
       } else {
         const sameItem = JSON.parse(
           localStorage.getItem('favorite') || '[]'

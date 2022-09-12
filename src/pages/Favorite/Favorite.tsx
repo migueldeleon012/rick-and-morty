@@ -14,25 +14,27 @@ const Favorite = () => {
       : setFavorite([]);
   }, []);
 
-  console.log(favorites);
-
   return (
     <main className="favorite">
-      {favorites.map((item) => (
-        <Card
-          key={item.id}
-          id={item.id}
-          name={item.name}
-          image={item.image}
-          species={item.species}
-          gender={item.gender}
-          origin={item.origin.name}
-          location={item.location.name}
-          fromFavorite={true}
-          favorite={favorites}
-          setFavorite={setFavorite}
-        />
-      ))}
+      {!favorites.length ? (
+        <h2>No favorites selected</h2>
+      ) : (
+        favorites.map((item) => (
+          <Card
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            image={item.image}
+            species={item.species}
+            gender={item.gender}
+            origin={item.origin.name}
+            location={item.location.name}
+            fromFavorite={true}
+            favorite={favorites}
+            setFavorite={setFavorite}
+          />
+        ))
+      )}
     </main>
   );
 };
