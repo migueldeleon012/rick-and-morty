@@ -11,4 +11,5 @@ export interface ICard {
   setFavorite?: (value: any[]) => void;
   origin?: string;
   location?: string;
+  episode?: string[];
 }
