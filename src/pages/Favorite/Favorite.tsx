@@ -7,7 +7,7 @@ const Favorite = () => {
 
   useEffect(() => {
     const favoriteLocalStorage = JSON.parse(
-      localStorage.getItem('favorite') || '{}'
+      localStorage.getItem('favorite') || '[]'
     );
     favoriteLocalStorage
       ? setFavorite(JSON.parse(localStorage.getItem('favorite') || '[]'))
