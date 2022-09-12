@@ -26,6 +26,7 @@ const Modal = ({
         const sameItem = JSON.parse(
           localStorage.getItem('favorite') || '[]'
         ).some((item: { id: number }) => item.id === data.id);
+
         if (sameItem) {
           alert('Character already added');
           return;
