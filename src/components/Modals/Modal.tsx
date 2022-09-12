@@ -26,15 +26,18 @@ const Modal = ({
         const sameItem = JSON.parse(
           localStorage.getItem('favorite') || '[]'
         ).some((item: { id: number }) => item.id === data.id);
-        sameItem
-          ? alert('Character already added')
-          : localStorage.setItem(
-              'favorite',
-              JSON.stringify([
-                ...JSON.parse(localStorage.getItem('favorite') || '[]'),
-                data,
-              ])
-            );
+        if (sameItem) {
+          alert('Character already added');
+          return;
+        }
+        localStorage.setItem(
+          'favorite',
+          JSON.stringify([
+            ...JSON.parse(localStorage.getItem('favorite') || '[]'),
+            data,
+          ])
+        );
+        alert('Added to favorite');
       }
     });
   };
