@@ -46,7 +46,7 @@ const Pagination = ({
         <button
           key={pageNumber}
           onClick={changePages}
-          className={pageNumber == currentPage ? 'active' : undefined}
+          className={pageNumber === currentPage ? 'active' : undefined}
         >
           {pageNumber}
         </button>
