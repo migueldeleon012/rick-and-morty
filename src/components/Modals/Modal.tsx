@@ -19,8 +19,9 @@ const Modal = ({
     const apiURL = `https://rickandmortyapi.com/api/character/${id}`;
     axios.get(apiURL).then((res) => {
       let data = res.data;
-      if (!localStorage.getItem('favorite') || '[]') {
+      if (!localStorage.getItem('favorite')) {
         localStorage.setItem('favorite', JSON.stringify([data]));
+        console.log('hey');
       } else {
         const sameItem = JSON.parse(
           localStorage.getItem('favorite') || '[]'
