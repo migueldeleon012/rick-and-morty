@@ -19,30 +19,30 @@ const Modal = ({
     const apiURL = `https://rickandmortyapi.com/api/character/${id}`;
     axios.get(apiURL).then((res) => {
       let data = res.data;
-      if (!localStorage.getItem('favorite')) {
+      if (!localStorage.getItem('favirote') || '{}') {
         localStorage.setItem('favorite', JSON.stringify([data]));
       } else {
-        const sameItem = JSON.parse(localStorage.getItem('favorite')).some(
-          (item) => item.id === data.id
-        );
+        const sameItem = JSON.parse(
+          localStorage.getItem('favirote') || '{}'
+        ).some((item: { id: number }) => item.id === data.id);
         sameItem
           ? alert('Character already added')
           : localStorage.setItem(
               'favorite',
               JSON.stringify([
-                ...JSON.parse(localStorage.getItem('favorite')),
+                ...JSON.parse(localStorage.getItem('favirote') || '{}'),
                 data,
               ])
             );
       }
     });
   };
-  const removeFromFavorite = (id) => {
-    const newData = JSON.parse(localStorage.getItem('favorite')).filter(
-      (item) => item.id !== id
+  const removeFromFavorite = (id: string | undefined) => {
+    const newData = JSON.parse(localStorage.getItem('favorite') || '{}').filter(
+      (item: { id: string | undefined }) => item.id !== id
     );
     localStorage.setItem('favorite', JSON.stringify(newData));
-    setFavorite?.(JSON.parse(localStorage.getItem('favorite')));
+    setFavorite?.(JSON.parse(localStorage.getItem('favirote') || '{}'));
   };
 
   return (
